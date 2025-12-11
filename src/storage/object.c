@@ -6,6 +6,15 @@
 #include <errno.h>
 #include "../utils/utils.h"
 
+/**
+ * @brief Write a git object to .git/objects and return its SHA-1 hash
+ * 
+ * @param type: "blob", "tree", "commit"
+ * @param content: object content
+ * @param size: size of content
+ * @param outHash: OUTPUT - 40-char hex SHA-1 hash
+ * @return int: 0 on success, 1 on failure
+ */
 int writeObject(const char *type, const unsigned char *content, size_t size, char *outHash) {
     // Build header: "<type> <size>\0"
     char header[64];
