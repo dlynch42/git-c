@@ -4,7 +4,15 @@
 #include <string.h>
 #include "network.h"
 
-// Callback function for curl; accumulates response data
+/**
+ * @brief Write callback for curl to accumulate response data
+ * 
+ * @param contents: pointer to received data
+ * @param size: size of each data chunk
+ * @param nmemb: number of data chunks
+ * @param userp: pointer to HttpResponse struct
+ * @return size_t 
+ */
 static size_t writeCallback(void *contents, size_t size, size_t nmemb, void *userp) {
     size_t totalSize = size * nmemb;
     HttpResponse *response = (HttpResponse *)userp;
@@ -24,7 +32,13 @@ static size_t writeCallback(void *contents, size_t size, size_t nmemb, void *use
     return totalSize;
 }
 
-// Generic GET request
+/**
+ * @brief Generic GET request
+ * 
+ * @param url: URL to fetch
+ * @param response: OUTPUT - HttpResponse struct to hold response data
+ * @return int: 0 on success, -1 on failure
+ */
 int httpGet(const char *url, HttpResponse *response) {
     CURL *curl;
     CURLcode res;
@@ -61,7 +75,16 @@ int httpGet(const char *url, HttpResponse *response) {
     return 0;
 };
 
-// Generic POST request
+/**
+ * @brief Generic POST request
+ * 
+ * @param url: URL to post to
+ * @param contentType: Content-Type header value
+ * @param body: POST body data
+ * @param bodyLen: length of POST body
+ * @param response: OUTPUT - HttpResponse struct to hold response data
+ * @return int: 0 on success, -1 on failure
+ */
 int httpPost(const char *url, const char *contentType, const unsigned char *body, size_t bodyLen, HttpResponse *response) {
     CURL *curl;
     CURLcode res;
