@@ -5,8 +5,13 @@
 #include <errno.h>
 #include <zlib.h>
 #include "../utils/utils.h"
-
-// LSTree command implementation: ls-tree --name-only <tree_sha>
+/**
+ * @brief Implements the LSTree command: ls-tree --name-only <tree_sha>
+ * 
+ * @param argc: Number of command line arguments
+ * @param argv: Command line arguments
+ * @return int: Exit status
+ */
 int LSTree(int argc, char *argv[]) {
     int nameOnly = 0;
     const char *hash;

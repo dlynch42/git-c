@@ -4,6 +4,11 @@
 #include <sys/stat.h>
 #include <errno.h>
 
+/**
+ * @brief Implements the init command to initialize a new git repository
+  * 
+  * @return int 
+ */
 int init() {
     if (mkdir(".git", 0755) == -1 || 
         mkdir(".git/objects", 0755) == -1 || 

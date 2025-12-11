@@ -7,6 +7,13 @@
 
 char *buildPath(const char *hash);
 
+/**
+ * @brief Implements the cat-file command to display the content of a git object
+ * 
+ * @param argc: Number of command line arguments
+ * @param argv: Command line arguments
+ * @return int: Exit status
+ */
 int catFile(int argc, char *argv[]) {
     if (argc < 4) {
         fprintf(stderr, "Error: Not enough arguments for cat-file\n");

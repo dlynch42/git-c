@@ -8,6 +8,12 @@
 #include "../utils/utils.h"
 #include "../storage/object.h"
 
+/**
+ * @brief Compare two Entry structs by name for qsort
+ * 
+ * @param dirname Directory name to write tree from
+ * @return char* The SHA-1 hash of the written tree object
+ */
 char* writeTree(char *dirname) {
     Entry entries[256];
     int entrycount = 0;

@@ -16,7 +16,6 @@
  * @param argv clone <https://github.com/blah/blah> <some_dir>
  * @return int 
  */
-
 int clone(int argc, char *argv[]) {
     if (argc < 3) {
         fprintf(stderr, "Usage: clone <repo_url> <directory>\n");

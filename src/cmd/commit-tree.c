@@ -8,12 +8,16 @@
 #include <time.h>
 #include "../utils/utils.h"
 #include "../storage/object.h"
-/*
- * You'll receive exactly one parent commit
- * You'll receive exactly one line in the message
- * You're free to hardcode any valid name/email for the author/committer fields
+/**
+ * @brief Implements the commit-tree command to create a new commit object
+ *  You'll receive exactly one parent commit
+ *  You'll receive exactly one line in the message
+ *  You're free to hardcode any valid name/email for the author/committer fields
+ *  commit-tree <tree_sha> -p <commit_sha> -m <message>
  * 
- * commit-tree <tree_sha> -p <commit_sha> -m <message>
+ * @param argc Number of command line arguments
+ * @param argv Command line arguments
+ * @return int Exit status
 */
 int commitTree(int argc, char *argv[]) {
     // Create a commit object and print its 40-char SHA-1 hash to stdout

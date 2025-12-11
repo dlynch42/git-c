@@ -7,6 +7,13 @@
 #include <errno.h>
 #include <zlib.h>
 
+/**
+ * @brief Implements the hash-object command to hash and store a file as a git object
+ * 
+ * @param argc: Number of command line arguments
+ * @param argv: Command line arguments
+ * @return int: Exit status
+ */
 int hashObject(int argc, char *argv[]) {
     if (argc < 3) {
         fprintf(stderr, "Error: Not enough arguments for hash-object\n");
