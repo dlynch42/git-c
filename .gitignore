@@ -53,4 +53,7 @@ dkms.conf
 
 build
 vcpkg_installed
-CLAUDE.md
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+Makefile
